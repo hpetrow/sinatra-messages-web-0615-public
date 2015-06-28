@@ -9,24 +9,22 @@
     <div class="header">My Messages</div>
 
     <div id="message-stream">
-      <%
-        # for each message in @messages
-        # render the template below
-        # filling the content from
-        # the message
-      %>
-
-      <div class="message">
-        <div class="to">
+      <% @messages.each do |message| %>
+        <div class="message">
+          <div class="to">
+            <%= message.to %>
+          </div>
+          <div class="from">
+            <%= message.from %>
+          </div>
+          <div class="content">
+            <%= message.content %>
+          </div>
+          <div class="time">
+            <%= message.created_at %>
+          </div>
         </div>
-        <div class="from">
-        </div>
-        <div class="content">
-        </div>
-        <div class="time">
-        </div>
-      </div>
-
+      <% end %>
     </div>
   </body>
 </html>
